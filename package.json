@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/danielpa9708/json-fix/issues"
   },
-  "homepage": "https://github.com/danielpa9708/json-fix#readme"
+  "homepage": "https://github.com/danielpa9708/json-fix#readme",
+  "dependencies": {
+    "commander": "^2.12.2"
+  }
 }
