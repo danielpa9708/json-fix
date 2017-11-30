@@ -1,0 +1,19 @@
+{
+  "name": "json-fix",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpa9708/json-fix.git"
+  },
+  "author": "Daniel Perez Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielpa9708/json-fix/issues"
+  },
+  "homepage": "https://github.com/danielpa9708/json-fix#readme"
+}
