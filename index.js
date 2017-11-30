@@ -2,9 +2,10 @@
 
 var fs = require("fs");
 var program = require("commander");
+var packagejson = require("./package.json");
 
 program
-    .version("0.0.0")
+    .version(packagejson.version)
     .usage("<file>")
     .parse(process.argv);
 
