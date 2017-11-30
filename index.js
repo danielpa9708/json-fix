@@ -13,6 +13,6 @@ program.args.forEach(parse);
 function parse(path) {
     var str = fs.readFileSync(path).toString();
     eval("var js = " + str);
-    var json = JSON.stringify(js, null, 2);
+    var json = JSON.stringify(js, null, 4);
     fs.writeFileSync(path, json);
 }
