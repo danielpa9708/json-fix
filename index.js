@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require("fs");
+var jsonic = require("jsonic");
 var program = require("commander");
 var packagejson = require("./package.json");
 
@@ -20,7 +21,7 @@ program.args.forEach(parse);
 
 function parse(path) {
     var str = fs.readFileSync(path).toString();
-    eval("var js = " + str);
+    var js = jsonic(str);
     var json = JSON.stringify(js, null, spaces);
     fs.writeFileSync(path, json);
 }
