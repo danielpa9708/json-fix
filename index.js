@@ -22,6 +22,6 @@ program.args.forEach(parse);
 function parse(path) {
     var str = fs.readFileSync(path).toString();
     var js = jsonic(str);
-    var json = JSON.stringify(js, null, spaces);
+    var json = JSON.stringify(js, null, spaces) + "\n";
     fs.writeFileSync(path, json);
 }
