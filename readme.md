@@ -28,3 +28,21 @@
     "b": "world"
 }
 ```
+
+## IDEs configuration
+
+### Spacemacs/Emacs
+
+```
+  (defun fix-errors-with-json-fix-4 ()
+    (interactive)
+    (shell-command-to-string (format "json-fix -s 4 %s" buffer-file-name))
+    (revert-buffer-no-confirm))
+  (defun fix-errors-with-json-fix-2 ()
+    (interactive)
+    (shell-command-to-string (format "json-fix -s 2 --no-sort %s" buffer-file-name))
+    (revert-buffer-no-confirm))
+  (spacemacs/set-leader-keys "oj" 'fix-errors-with-json-fix-4)
+  (spacemacs/set-leader-keys "ok" 'fix-errors-with-json-fix-2)
+
+```
