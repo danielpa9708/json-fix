@@ -1,6 +1,6 @@
 # json-fix
 
-  Command link utility for parsing and fixing json with commons errors like missing ""
+  Command line utility for parsing and fixing json with commons errors like missing ""
 
 ## Installation
 
