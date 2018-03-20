@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 var fs = require("fs");
+var sortJson = require("good-sort-json");
 var jsonic = require("jsonic");
 var program = require("commander");
-var stringify = require("json-stable-stringify");
 var packagejson = require("./package.json");
 
 program
@@ -27,7 +27,7 @@ function parse(path) {
     var js = jsonic(str);
     var json = "";
     if (sort) {
-        json = stringify(js, { space: spaces });
+        json = sortJson(js, { space: spaces }) + "\n";
     } else {
         json = JSON.stringify(js, null, spaces) + "\n";
     }
