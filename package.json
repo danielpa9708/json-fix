@@ -1,10 +1,9 @@
 {
   "name": "json-fix",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielpa9708/json-fix.git"
