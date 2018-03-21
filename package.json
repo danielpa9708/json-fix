@@ -16,6 +16,10 @@
   "bin": {
     "json-fix": "index.js"
   },
+  "keywords": [
+    "json",
+    "parse"
+  ],
   "homepage": "https://github.com/danielpa9708/json-fix#readme",
   "dependencies": {
     "commander": "^2.12.2",
