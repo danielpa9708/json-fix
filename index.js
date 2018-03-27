@@ -5,6 +5,7 @@ var sortJson = require("good-sort-json");
 var jsonic = require("jsonic");
 var program = require("commander");
 var packagejson = require("./package.json");
+var getStdin = require("get-stdin")
 
 program
     .version(packagejson.version)
@@ -20,16 +21,29 @@ if (spaces === undefined) {
 var spaces = parseInt(spaces);
 var sort = program.sort;
 
-program.args.forEach(parse);
+if (program.args.length) {
+    program.args.forEach(parse);
+} else {
+    getStdin().then((src) => {
+        const result = parseString(src);
+        process.stdout.write(result);
+    }).catch((err) => {
+        console.err(err);
+        process.exit(1);
+    });
+}
 
 function parse(path) {
     var str = fs.readFileSync(path).toString();
-    var js = jsonic(str);
-    var json = "";
-    if (sort) {
-        json = sortJson(js, { space: spaces }) + "\n";
-    } else {
-        json = JSON.stringify(js, null, spaces) + "\n";
-    }
+    const json = parseString(str);
     fs.writeFileSync(path, json);
+}
+
+function parseString(str) {
+    var js = jsonic(str);
+    if (sort) {
+        return sortJson(js, { space: spaces }) + "\n";
+    } else {
+        return JSON.stringify(js, null, spaces) + "\n";
+    }
 }
