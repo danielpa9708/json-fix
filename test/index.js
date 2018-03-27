@@ -8,10 +8,10 @@ const get = util.promisify(cmd.get);
 
 describe("json-fix", function () {
     const indexsrc = path.resolve(__dirname, "../index.js");
-    before(async function() {
+    beforeEach(async function() {
         await fs.ensureDir(path.join(__dirname, "fixture"));
     });
-    after(async function() {
+    afterEach(async function() {
         await fs.remove(path.join(__dirname, "fixture"));
     });
     it("should work with exapmle", async function() {
@@ -26,6 +26,18 @@ describe("json-fix", function () {
         await fs.writeFile(testsrc, testjson);
         await get(command);
         const result = await fs.readFile(testsrc);
+        expect(result.toString()).to.be.eq(expected);
+    });
+    it("should work from stdin", async function() {
+        const testjson =  "{a:3,b:2}"
+        const command = `echo ${testjson} | node ${indexsrc}`;
+        const expected = `{
+  "a": 3,
+  "b": 2
+}
+`;
+        const result = await get(command);
+        console.log(result);
         expect(result.toString()).to.be.eq(expected);
     });
 });
