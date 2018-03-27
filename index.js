@@ -1,24 +1,24 @@
 #!/usr/bin/env node
 
 var fs = require("fs");
-var sortJson = require("good-sort-json");
+var getStdin = require("get-stdin");
 var jsonic = require("jsonic");
 var program = require("commander");
+var sortJson = require("good-sort-json");
 var packagejson = require("./package.json");
-var getStdin = require("get-stdin")
 
 program
     .version(packagejson.version)
-    .option("-s, --spaces [amount]", "Number of spaces for indentation")
+    .option("-s, --spaces <amount>", "Number of spaces for indentation", parseInt)
     .option("--no-sort", "Don't sort")
-    .usage("<file>")
+    .usage("[options] [file ...]")
     .parse(process.argv);
 
 var spaces = program.spaces;
 if (spaces === undefined) {
-    spaces = "4";
+    spaces = 4;
 }
-var spaces = parseInt(spaces);
+var spaces = spaces;
 var sort = program.sort;
 
 if (program.args.length) {
