@@ -23,6 +23,7 @@
   "homepage": "https://github.com/danielpa9708/json-fix#readme",
   "dependencies": {
     "commander": "^2.12.2",
+    "get-stdin": "^6.0.0",
     "good-sort-json": "^0.1.2",
     "jsonic": "^0.3.0"
   },
