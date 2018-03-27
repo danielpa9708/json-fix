@@ -12,9 +12,14 @@
  
 ## Examples
 
-  This
+### Passing files to arguments
+
+```bash
+$ json-fix a.json
+```
 
 ```js
+// a.json
 { a: "hello",
  b: "world",
 }
@@ -23,11 +28,23 @@
   converts to
 
 ```json
+// a.json
 {
     "a": "hello",
     "b": "world"
 }
 ```
+
+### Passing json from stdin
+
+```bash
+$ echo { a: 3, b: 2 } | json-fix
+{
+  "a": 3,
+  "b": 2
+}
+```
+
 
 ## IDEs configuration
 
