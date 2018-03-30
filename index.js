@@ -24,13 +24,15 @@ var sort = program.sort;
 if (program.args.length) {
     program.args.forEach(parse);
 } else {
-    getStdin().then((src) => {
-        const result = parseString(src);
-        process.stdout.write(result);
-    }).catch((err) => {
-        console.err(err);
-        process.exit(1);
-    });
+    getStdin()
+        .then((src) => {
+            const result = parseString(src);
+            process.stdout.write(result);
+        })
+        .catch((err) => {
+            console.err(err);
+            process.exit(1);
+        });
 }
 
 function parse(path) {
