@@ -39,4 +39,15 @@ describe("json-fix", function() {
         const result = await get(command);
         expect(result.toString()).to.be.eq(expected);
     });
+    it("should work with inflection=pascalcase", async function() {
+        const testsrc = path.join(__dirname, "fixture/test.json");
+        await fs.writeFile(testsrc, "{a:3,b:2}");
+        await get(`node ${indexsrc} ${testsrc} --inflect="pascalcase"`);
+        const result = await fs.readFile(testsrc);
+        expect(result.toString()).to.be.eq(`{
+  "A": 3,
+  "B": 2
+}
+`);
+    });
 });
