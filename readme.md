@@ -6,10 +6,20 @@
 
     $ npm install json-fix --global
 
-## Option spaces
+## Options
 
- You can specify spaces with `--spaces %number of spaces%`, it uses `4` as default
- 
+    $ json-fix --help
+
+      Usage: index [options] [file ...]
+
+      Options:
+
+        -V, --version                       output the version number
+        -s, --spaces <amount>               Number of spaces for indentation
+        -i, --inflection <none|pascalcase>  Inflection type, defaults to none
+        --no-sort                           Don't sort
+        -h, --help                          output usage information
+
 ## Examples
 
 ### Passing files to arguments
