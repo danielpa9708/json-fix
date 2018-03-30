@@ -37,7 +37,6 @@ describe("json-fix", function () {
 }
 `;
         const result = await get(command);
-        console.log(result);
         expect(result.toString()).to.be.eq(expected);
     });
 });
