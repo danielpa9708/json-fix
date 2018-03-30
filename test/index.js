@@ -6,7 +6,7 @@ const util = require("util");
 
 const get = util.promisify(cmd.get);
 
-describe("json-fix", function () {
+describe("json-fix", function() {
     const indexsrc = path.resolve(__dirname, "../index.js");
     beforeEach(async function() {
         await fs.ensureDir(path.join(__dirname, "fixture"));
@@ -15,8 +15,8 @@ describe("json-fix", function () {
         await fs.remove(path.join(__dirname, "fixture"));
     });
     it("should work with exapmle", async function() {
-        const testsrc =  path.join(__dirname, "fixture/test.json");
-        const testjson =  "{a:3,b:2}"
+        const testsrc = path.join(__dirname, "fixture/test.json");
+        const testjson = "{a:3,b:2}";
         const command = `node ${indexsrc} ${testsrc}`;
         const expected = `{
   "a": 3,
@@ -29,7 +29,7 @@ describe("json-fix", function () {
         expect(result.toString()).to.be.eq(expected);
     });
     it("should work from stdin", async function() {
-        const testjson =  "{a:3,b:2}"
+        const testjson = "{a:3,b:2}";
         const command = `echo ${testjson} | node ${indexsrc}`;
         const expected = `{
   "a": 3,
