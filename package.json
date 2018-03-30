@@ -24,9 +24,11 @@
   ],
   "homepage": "https://github.com/danielpa9708/json-fix#readme",
   "dependencies": {
+    "assert": "^1.4.1",
     "commander": "^2.12.2",
     "get-stdin": "^6.0.0",
     "good-sort-json": "^0.1.2",
+    "inflect-json": "^0.2.0",
     "jsonic": "^0.3.0"
   },
   "devDependencies": {
