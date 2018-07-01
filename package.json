@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "prettier \"**/*.{json,ts,js}\" --write",
     "test": "mocha"
   },
   "repository": {
