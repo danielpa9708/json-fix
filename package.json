@@ -7,6 +7,9 @@
     "format": "prettier \"**/*.{json,ts,js}\" --write",
     "test": "mocha"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielpa9708/json-fix.git"
