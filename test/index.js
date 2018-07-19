@@ -7,7 +7,7 @@ const util = require("util");
 const get = util.promisify(cmd.get);
 
 describe("json-fix", function() {
-  const indexsrc = path.resolve(__dirname, "../index.js");
+  const indexsrc = path.resolve(__dirname, "../src/index.js");
   beforeEach(async function() {
     await fs.ensureDir(path.join(__dirname, "fixture"));
   });

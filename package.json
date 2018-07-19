@@ -2,13 +2,13 @@
   "name": "json-fix",
   "version": "0.7.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "format": "prettier \"**/*.{json,ts,js}\" --write",
     "test": "mocha"
   },
   "files": [
-    "index.js"
+    "src"
   ],
   "repository": {
     "type": "git",

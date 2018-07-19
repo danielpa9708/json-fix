@@ -6,7 +6,7 @@ var getStdin = require("get-stdin");
 var jsonic = require("jsonic");
 var program = require("commander");
 var sortJson = require("good-sort-json");
-var packagejson = require("./package.json");
+var packagejson = require("../package.json");
 var inflect = require("inflect-json");
 
 var allowedInflection = ["none", "pascalcase"];
